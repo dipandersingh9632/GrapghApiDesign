@@ -20,7 +20,7 @@ import static org.mockito.Mockito.when;
 
 @WebMvcTest(GraphNodeController.class)
 @ExtendWith(SpringExtension.class)
-class GraphNodeControllerTest {
+class GraphNodeControllerUnitTest {
     @Autowired
     private MockMvc mockMvc;
 
