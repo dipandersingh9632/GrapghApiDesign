@@ -13,12 +13,12 @@ public class GraphNodeController {
     @Autowired
     public GraphNodeController(GraphNodeService graphNodeService){this.graphNodeService = graphNodeService;}
 
-    @GetMapping("/connected/{nodeVal1}/{nodeVal2}")
+    @GetMapping("/isConnected/{nodeVal1}/{nodeVal2}")
     public ResponseEntity<Boolean> nodesConnected(@PathVariable Integer nodeVal1, @PathVariable Integer nodeVal2){
         return new ResponseEntity<>(graphNodeService.isNodesConnected(nodeVal1, nodeVal2), HttpStatus.OK);
     }
 
-    @PostMapping("/joins/{nodeVal1}/{nodeVal2}")
+    @PostMapping("/join/{nodeVal1}/{nodeVal2}")
     public ResponseEntity<String> nodesJoin(@PathVariable Integer nodeVal1, @PathVariable Integer nodeVal2){
         graphNodeService.joinNodes(nodeVal1, nodeVal2);
         return new ResponseEntity<>("Nodes Joined Successfully", HttpStatus.OK);

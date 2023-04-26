@@ -24,6 +24,7 @@ public class GraphNodeServiceImpl implements  GraphNodeService {
         if(node2 == null){
             node2 = new GraphNode(nodeVal2);
         }
+
         node1.getConnectedNodes().add(node2);
         node2.getConnectedNodes().add(node1);
         graphNodeMap.put(nodeVal1, node1);
